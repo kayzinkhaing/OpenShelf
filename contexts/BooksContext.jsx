@@ -3,8 +3,8 @@ import { databases, client } from "../lib/appwrite"
 import { ID, Permission, Query, Role } from "react-native-appwrite"
 import { useUser } from "../hooks/useUser"
 
-const DATABASE_ID = "67cdd0c9002307459723"
-const COLLECTION_ID = "67cdd0cf00307157221e"
+const DATABASE_ID = "6a5a012e00020f6d1761"
+const COLLECTION_ID = "books"
 
 export const BooksContext = createContext()
 
