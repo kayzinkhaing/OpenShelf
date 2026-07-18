@@ -1,18 +1,32 @@
 # 📚 Shelfie App
 
-A modern mobile bookshelf management application built with **React Native and Expo**.
+<p align="center">
+  <img src="./assets/img/welcome.jpg" width="220"/>
+  <img src="./assets/img/bookLists.jpg" width="220"/>
+  <img src="./assets/img/profile.jpg" width="220"/>
+</p>
 
-Shelfie helps users organize their books, explore collections, and manage their personal reading experience with a clean and user-friendly mobile interface.
+<h3 align="center">
+A modern bookshelf management mobile application built with React Native and Expo.
+</h3>
+
+<p align="center">
+Shelfie helps users discover books, manage their personal collections, and organize their reading experience through a clean and intuitive mobile interface.
+</p>
 
 ---
 
-# 📱 App Preview
+# 📖 About The Project
 
-<p align="center">
-  <img src="./assets/img/welcome.jpg" width="250" />
-  <img src="./assets/img/bookLists.jpg" width="250" />
-  <img src="./assets/img/profile.jpg" width="250" />
-</p>
+Shelfie is a cross-platform mobile application developed with **React Native and Expo**.
+
+The project focuses on building a scalable mobile application architecture using:
+
+- Expo Router navigation
+- Reusable React Native components
+- Context-based state management
+- Clean folder organization
+- Modern mobile UI patterns
 
 ---
 
@@ -20,24 +34,31 @@ Shelfie helps users organize their books, explore collections, and manage their 
 
 ## 📚 Book Management
 
-- View available books
-- Browse book collections
-- View book information
-- Organize personal library
+- Browse available books
+- View book collections
+- Display book details
+- Manage personal bookshelf
+- Organize reading materials
+
+## 🔐 Authentication
+
+- Authentication flow separation
+- Protected dashboard routes
+- User session management
 
 ## 🎨 User Interface
 
 - Modern mobile UI design
 - Responsive layouts
-- Dark mode support
-- Smooth navigation experience
+- Dark theme support
+- Reusable components
 
 ## ⚡ Development Features
 
-- Component-based architecture
-- Reusable React Native components
-- Clean project structure
-- Expo development workflow
+- File-based routing with Expo Router
+- Component-driven architecture
+- Custom React hooks
+- Centralized application contexts
 
 ---
 
@@ -45,59 +66,95 @@ Shelfie helps users organize their books, explore collections, and manage their 
 
 ## Mobile Application
 
-- React Native
-- Expo
-- Expo Router
-- TypeScript / JavaScript
+| Technology | Purpose |
+|---|---|
+| React Native | Cross-platform mobile development |
+| Expo | React Native development platform |
+| Expo Router | File-based navigation |
+| JavaScript | Application development |
+| Context API | Global state management |
 
 ## Development Tools
 
-- VS Code
-- Git
-- GitHub
-- Expo CLI
+| Tool | Purpose |
+|---|---|
+| VS Code | Development environment |
+| Git | Version control |
+| GitHub | Source code management |
+| Expo CLI | Development workflow |
 
 ---
 
 # 🚀 Getting Started
 
-## 1. Clone Repository
+## Prerequisites
+
+Install:
+
+- Node.js
+- npm
+- Expo Go application
+
+Check versions:
 
 ```bash
-git clone https://github.com/yourusername/shelfie_app.git
+node -v
 ```
 
-## 2. Install Dependencies
+```bash
+npm -v
+```
+
+---
+
+# 📦 Installation
+
+## Clone Repository
+
+```bash
+git clone https://github.com/kayzinkhaing/OpenShelf.git
+```
+
+Move into project:
+
+```bash
+cd shelfie_app
+```
+
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-## 3. Start Expo Development Server
+---
 
-### Normal Start
+# ▶️ Run Application
+
+## Start Development Server
 
 ```bash
 npx expo start
 ```
 
-### Start with Tunnel (Recommended for Physical Devices)
+## Start With Tunnel
+
+Recommended for testing on physical devices:
 
 ```bash
 npx expo start --tunnel
 ```
 
-The tunnel option allows you to connect your mobile device even when your computer and phone are on different networks.
+Tunnel mode allows your mobile device to connect even when your computer and phone are on different networks.
 
 ---
 
-# 📲 Run on Device
+# 📱 Run On Device
 
-After starting Expo:
-
-1. Install **Expo Go** on your Android/iOS device
-2. Scan the QR code shown in the terminal or browser
-3. The application will open on your device
+1. Install **Expo Go**
+2. Start the Expo development server
+3. Scan the QR code
+4. Open Shelfie on your device
 
 ---
 
@@ -106,74 +163,79 @@ After starting Expo:
 ```
 shelfie_app
 │
-├── app
-│   ├── index.tsx
-│   └── screens
+├── app/                         # Expo Router application routes
+│   │
+│   ├── (auth)/                  # Authentication routes
+│   │   ├── login
+│   │   └── register
+│   │
+│   ├── (dashboard)/             # Main application routes
+│   │
+│   ├── _layout.jsx              # Root navigation layout
+│   ├── index.jsx                # Application entry route
+│   ├── about.jsx                # About screen
+│   └── contact.jsx              # Contact screen
 │
-├── assets
-│   └── img
+├── assets/                      # Images, icons, and static files
+│   └── img/
 │       ├── welcome.jpg
 │       ├── bookLists.jpg
 │       └── profile.jpg
 │
-├── components
-│   └── reusable components
+├── components/                  # Reusable UI components
 │
-├── hooks
+├── contexts/                    # Global state management
 │
-├── utils
+├── hooks/                       # Custom React hooks
 │
-├── app.json
-├── package.json
+├── lib/                         # Helper functions and services
+│
+├── constants/                   # Application constants
+│
+├── App.js                       # Application configuration
+├── index.js                     # Entry point
+├── app.json                     # Expo configuration
+├── package.json                 # Dependencies
 └── README.md
 ```
 
 ---
 
-# 📸 Screenshots
+# 🏗 Architecture Overview
 
-## Welcome Screen
+Shelfie follows a clean React Native architecture:
 
-<img src="./assets/img/welcome.jpg" width="300"/>
+```
+        Screens (Expo Router)
+                |
+                ↓
+        Reusable Components
+                |
+                ↓
+        Context / Hooks
+                |
+                ↓
+        Services & Utilities
+```
 
----
+This structure provides:
 
-## Book List Screen
-
-<img src="./assets/img/bookLists.jpg" width="300"/>
-
----
-
-## Profile Screen
-
-<img src="./assets/img/profile.jpg" width="300"/>
+- Better maintainability
+- Reusable components
+- Cleaner business logic
+- Easier future scaling
 
 ---
 
 # 🔮 Future Improvements
 
-- User authentication
-- Cloud database integration
+- User authentication API integration
+- Cloud database synchronization
 - Reading progress tracking
 - Book recommendation system
 - Push notifications
 - Offline mode support
-
----
-
-# 👨‍💻 Author
-
-**Kay Zin Khaing**
-
-Full-Stack Developer
-
-Specialized in:
-
-- React Native
-- Laravel
-- Vue.js
-- REST API Development
-- Clean Architecture
+- Advanced search functionality
 
 ---
 
